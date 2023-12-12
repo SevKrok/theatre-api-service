@@ -18,6 +18,7 @@ from theatre.serializers import (
     PlayImageSerializer,
     PlayDetailSerializer,
     PlayListSerializer,
+    PerformanceDetailSerializer,
 )
 
 
@@ -69,6 +70,21 @@ class PlayViewSet(
     serializer_class = PlaySerializer
     permission_classes = (IsAdminOrReadOnly,)
 
+    @staticmethod
+    def _params_to_init(queryset):
+        return [int(str_id) for str_id in queryset.split(",")]
+
+    def get_queryset(self):
+        queryset = self.queryset
+
+        genres = self.request.query_params.get("genres")
+
+        if genres:
+            genre_ids = self._params_to_init(genres)
+            queryset = queryset.filter(genres__id__in=genre_ids)
+
+        return queryset.distinct()
+
     def get_serializer_class(self):
         if self.action == "list":
             return PlayListSerializer
@@ -119,6 +135,12 @@ class PerformanceViewSet(
     ).prefetch_related("tickets")
     serializer_class = PerformanceSerializer
     permission_classes = (IsAdminOrReadOnly,)
+
+    def get_serializer_class(self):
+        if self.action == "retrieve":
+            return PerformanceDetailSerializer
+
+        return PerformanceSerializer
 
 
 class ReservationViewSet(
