@@ -1,3 +1,4 @@
+from django.db.models import Count, F
 from rest_framework import viewsets, mixins, status
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
@@ -19,6 +20,7 @@ from theatre.serializers import (
     PlayDetailSerializer,
     PlayListSerializer,
     PerformanceDetailSerializer,
+    PerformanceListSerializer,
 )
 
 
@@ -136,7 +138,21 @@ class PerformanceViewSet(
     serializer_class = PerformanceSerializer
     permission_classes = (IsAdminOrReadOnly,)
 
+    def get_queryset(self):
+        queryset = self.queryset
+
+        if self.action == "list":
+            queryset = queryset.annotate(
+                tickets_available=F("theatre_hall__rows")
+                * F("theatre_hall__seats_in_row")
+                - Count("tickets")
+            )
+
+        return queryset.distinct()
+
     def get_serializer_class(self):
+        if self.action == "list":
+            return PerformanceListSerializer
         if self.action == "retrieve":
             return PerformanceDetailSerializer
 
