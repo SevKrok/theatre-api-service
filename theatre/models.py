@@ -1,6 +1,7 @@
 import os
 import uuid
 
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.db.models import UniqueConstraint
 from django.utils.text import slugify
@@ -101,9 +102,36 @@ class Ticket(models.Model):
     )
 
     class Meta:
-        constraints = [
-            UniqueConstraint(fields=["performance", "row", "seat"], name="unique_ticket_seat")
-        ]
+        unique_together = ("performance", "row", "seat")
+        ordering = ("row", "seat")
+
+    @staticmethod
+    def validate_seat(
+        seat: int, row: int, max_seats: int, max_rows: int, error_to_raise
+    ):
+        if not (1 <= seat <= max_seats):
+            raise ValidationError(
+                {"seat": f"seat must be in range [1, {max_seats}], not {seat}"}
+            )
+        if not (1 <= row <= max_rows):
+            raise error_to_raise(
+                {"row": f"row must be in range [1, {max_rows}], not {row}"}
+            )
+
+    def clean(self):
+        Ticket.validate_seat(
+            self.seat,
+            self.row,
+            self.performance.theatre_hall.seats_in_row,
+            self.performance.theatre_hall.rows,
+            ValidationError,
+        )
+
+    def save(
+        self, force_insert=False, force_update=False, using=None, update_fields=None
+    ):
+        self.full_clean()
+        return super().save(force_insert, force_update, using, update_fields)
 
     def __str__(self) -> str:
         return f"{self.performance} (row: {self.row},seat: {self.seat})"

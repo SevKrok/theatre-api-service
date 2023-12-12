@@ -116,27 +116,45 @@ class TheatreHallSerializer(serializers.ModelSerializer):
 class TicketSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ticket
-        fields = ("id", "row", "seat", "reservation")
+        fields = ("id", "row", "seat", "performance")
+
+    def validate(self, attrs):
+        data = super().validate(attrs)
+
+        Ticket.validate_seat(
+            attrs["seat"],
+            attrs["row"],
+            attrs["performance"].theatre_hall.seats_in_row,
+            attrs["performance"].theatre_hall.rows,
+            serializers.ValidationError,
+        )
+
+        return data
+
+
+class TicketSeatSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Ticket
+        fields = ("row", "seat")
 
 
 class PerformanceSerializer(serializers.ModelSerializer):
     play = PlaySerializer(many=False)
     theatre_hall = TheatreHallSerializer(many=False)
-    tickets = TicketSerializer(many=True)
 
     class Meta:
         model = Performance
-        fields = ("id", "play", "theatre_hall", "show_time", "tickets")
+        fields = ("id", "play", "theatre_hall", "show_time")
 
-    def validate(self, attrs):
-        data = super().validate(attrs=attrs)
-        Ticket.validate_ticket(
-            attrs["row"],
-            attrs["seat"],
-            attrs["flight"].airplane,
-            ValidationError,
-        )
-        return data
+
+class PerformanceDetailSerializer(PerformanceSerializer):
+    play = PlaySerializer(many=False)
+    theatre_hall = TheatreHallSerializer(many=False)
+    taken_tickets = TicketSeatSerializer(many=True, source="tickets")
+
+    class Meta:
+        model = Performance
+        fields = ("id", "play", "theatre_hall", "show_time", "taken_tickets")
 
 
 class ReservationSerializer(serializers.ModelSerializer):
