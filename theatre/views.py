@@ -1,4 +1,5 @@
 from django.db.models import Count, F
+from drf_spectacular.utils import extend_schema, OpenApiParameter
 from rest_framework import viewsets, mixins, status
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
@@ -73,17 +74,21 @@ class PlayViewSet(
     permission_classes = (IsAdminOrReadOnly,)
 
     @staticmethod
-    def _params_to_init(queryset):
+    def _params_to_ints(queryset):
         return [int(str_id) for str_id in queryset.split(",")]
 
     def get_queryset(self):
         queryset = self.queryset
 
         genres = self.request.query_params.get("genres")
+        actors = self.request.query_params.get("actors")
 
         if genres:
-            genre_ids = self._params_to_init(genres)
+            genre_ids = self._params_to_ints(genres)
             queryset = queryset.filter(genres__id__in=genre_ids)
+        if actors:
+            actors_ids = self._params_to_ints(actors)
+            queryset = queryset.filter(actors__id__in=actors_ids)
 
         return queryset.distinct()
 
@@ -113,6 +118,23 @@ class PlayViewSet(
             return Response(serializer.data, status=status.HTTP_200_OK)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    @extend_schema(
+        parameters=[
+            OpenApiParameter(
+                name="genres",
+                type={"type": "list", "items": {"type": "number"}},
+                description="Filter by genre ids (ex. ?genres=1,2)",
+            ),
+            OpenApiParameter(
+                name="actors",
+                type={"type": "list", "items": {"type": "number"}},
+                description="Filter by actor ids (ex. ?actors=1,2)",
+            ),
+        ]
+    )
+    def list(self, request, *args, **kwargs):
+        return super().list(request, *args, **kwargs)
 
 
 class TheatreHallViewSet(
