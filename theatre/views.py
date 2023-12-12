@@ -68,7 +68,7 @@ class PlayViewSet(
     mixins.DestroyModelMixin,
     viewsets.GenericViewSet,
 ):
-    queryset = Play.objects.prefetch_related("genres", "actors")
+    queryset = Play.objects.prefetch_related("genres", "actors", "performances")
     serializer_class = PlaySerializer
     permission_classes = (IsAdminOrReadOnly,)
 
@@ -132,9 +132,11 @@ class PerformanceViewSet(
     mixins.RetrieveModelMixin,
     viewsets.GenericViewSet,
 ):
-    queryset = Performance.objects.select_related(
-        "play", "theatre_hall"
-    ).prefetch_related("tickets")
+    queryset = Performance.objects.select_related("theatre_hall").prefetch_related(
+        "tickets",
+        "play__actors",
+        "play__genres",
+    )
     serializer_class = PerformanceSerializer
     permission_classes = (IsAdminOrReadOnly,)
 
