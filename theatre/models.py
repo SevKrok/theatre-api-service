@@ -72,11 +72,13 @@ class Ticket(models.Model):
     performance = models.ForeignKey(
         Performance,
         on_delete=models.SET_NULL,
+        related_name="tickets",
         null=True,
     )
     reservation = models.ForeignKey(
         Reservation,
         on_delete=models.SET_NULL,
+        related_name="tickets",
         null=True,
     )
 
