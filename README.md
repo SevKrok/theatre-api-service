@@ -66,18 +66,19 @@ docker-compose up
 ```
 
 ## Getting access
-* Create user: `/api/user/register/`
-* Get access token: `/api/user/token/`
-* Look for documentation: `/api/doc/swagger/`
-* Admin panel: `/admin/`
++ Create user: `/api/user/register/`
++ Get access token: `/api/user/token/`
++ Look for documentation: `/api/doc/swagger/`
++ Admin panel: `/admin/`
 
 ## Features
-* JWT Authentication
-* Email-Based Authentication
-* Admin panel
-* Throttling Mechanism
-* API documentation
-* Upload image to Play
-* Filtering Plays by genres
-* Managing reservations and tickets
-* Implement a new permission class for reading without auth
++ JWT Authentication
++ Email-Based Authentication
++ Admin panel
++ Pagination for all pages
++ Throttling Mechanism
++ API documentation
++ Upload image to Play
++ Filtering Plays by genres
++ Managing reservations and tickets
++ Implement a new permission class for reading without auth
