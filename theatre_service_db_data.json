@@ -1,0 +1,960 @@
+[
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2023-12-12T17:57:28.457",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "1",
+      "object_repr": "PHILOCTETUS. ANTIQUE RAVE",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Genres\", \"Actors\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2023-12-12T17:59:09.704",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "2",
+      "object_repr": "LESYA. HISTORY",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2023-12-12T17:59:17.981",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "1",
+      "object_repr": "admin@admin.com 2023-12-12 17:59:17.980752",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2023-12-12T18:00:57.041",
+      "user": 1,
+      "content_type": 13,
+      "object_id": "2",
+      "object_repr": "user@base.com",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2023-12-12T18:01:16.045",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "2",
+      "object_repr": "user@base.com 2023-12-12 18:01:16.045490",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2023-12-12T18:01:57.245",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "1",
+      "object_repr": "Big scene",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2023-12-12T18:02:12.893",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "2",
+      "object_repr": "Small scene",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+      "action_time": "2023-12-12T18:02:27.300",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "1",
+      "object_repr": "LESYA. HISTORY 2023-12-12 18:00:00",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+      "action_time": "2023-12-12T18:02:39.503",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "2",
+      "object_repr": "PHILOCTETUS. ANTIQUE RAVE 2023-12-12 18:00:00",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+      "action_time": "2023-12-12T18:02:59.826",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "1",
+      "object_repr": "LESYA. HISTORY 2023-12-12 18:00:00 (row: 1,seat: 3)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+      "action_time": "2023-12-12T18:03:15.334",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "2",
+      "object_repr": "PHILOCTETUS. ANTIQUE RAVE 2023-12-12 18:00:00 (row: 3,seat: 4)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+      "action_time": "2023-12-12T18:03:43.934",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "3",
+      "object_repr": "LESYA. HISTORY 2023-12-12 18:00:00 (row: 4,seat: 21)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": 1,
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": 1,
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": 1,
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can view log entry",
+      "content_type": 1,
+      "codename": "view_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 2,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 2,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 2,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can view permission",
+      "content_type": 2,
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 3,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 3,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 3,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can view group",
+      "content_type": 3,
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 4,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 4,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 4,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": 4,
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 5,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 5,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 5,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can view session",
+      "content_type": 5,
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can add actor",
+      "content_type": 6,
+      "codename": "add_actor"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can change actor",
+      "content_type": 6,
+      "codename": "change_actor"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can delete actor",
+      "content_type": 6,
+      "codename": "delete_actor"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can view actor",
+      "content_type": 6,
+      "codename": "view_actor"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add genre",
+      "content_type": 7,
+      "codename": "add_genre"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change genre",
+      "content_type": 7,
+      "codename": "change_genre"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete genre",
+      "content_type": 7,
+      "codename": "delete_genre"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can view genre",
+      "content_type": 7,
+      "codename": "view_genre"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can add theatre hall",
+      "content_type": 8,
+      "codename": "add_theatrehall"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can change theatre hall",
+      "content_type": 8,
+      "codename": "change_theatrehall"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can delete theatre hall",
+      "content_type": 8,
+      "codename": "delete_theatrehall"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can view theatre hall",
+      "content_type": 8,
+      "codename": "view_theatrehall"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+      "name": "Can add play",
+      "content_type": 9,
+      "codename": "add_play"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+      "name": "Can change play",
+      "content_type": 9,
+      "codename": "change_play"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+      "name": "Can delete play",
+      "content_type": 9,
+      "codename": "delete_play"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+      "name": "Can view play",
+      "content_type": 9,
+      "codename": "view_play"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+      "name": "Can add reservation",
+      "content_type": 10,
+      "codename": "add_reservation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+      "name": "Can change reservation",
+      "content_type": 10,
+      "codename": "change_reservation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+      "name": "Can delete reservation",
+      "content_type": 10,
+      "codename": "delete_reservation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+      "name": "Can view reservation",
+      "content_type": 10,
+      "codename": "view_reservation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+      "name": "Can add performance",
+      "content_type": 11,
+      "codename": "add_performance"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+      "name": "Can change performance",
+      "content_type": 11,
+      "codename": "change_performance"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+      "name": "Can delete performance",
+      "content_type": 11,
+      "codename": "delete_performance"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+      "name": "Can view performance",
+      "content_type": 11,
+      "codename": "view_performance"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+      "name": "Can add ticket",
+      "content_type": 12,
+      "codename": "add_ticket"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+      "name": "Can change ticket",
+      "content_type": 12,
+      "codename": "change_ticket"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+      "name": "Can delete ticket",
+      "content_type": 12,
+      "codename": "delete_ticket"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+      "name": "Can view ticket",
+      "content_type": 12,
+      "codename": "view_ticket"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+      "name": "Can add user",
+      "content_type": 13,
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+      "name": "Can change user",
+      "content_type": 13,
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+      "name": "Can delete user",
+      "content_type": 13,
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+      "name": "Can view user",
+      "content_type": 13,
+      "codename": "view_user"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+      "app_label": "admin",
+      "model": "logentry"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+      "app_label": "auth",
+      "model": "permission"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+      "app_label": "auth",
+      "model": "group"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+      "app_label": "contenttypes",
+      "model": "contenttype"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+      "app_label": "sessions",
+      "model": "session"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+      "app_label": "theatre",
+      "model": "actor"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+      "app_label": "theatre",
+      "model": "genre"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+      "app_label": "theatre",
+      "model": "theatrehall"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+      "app_label": "theatre",
+      "model": "play"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+      "app_label": "theatre",
+      "model": "reservation"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+      "app_label": "theatre",
+      "model": "performance"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+      "app_label": "theatre",
+      "model": "ticket"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": {
+      "app_label": "user",
+      "model": "user"
+    }
+  },
+  {
+    "model": "theatre.actor",
+    "pk": 1,
+    "fields": {
+      "first_name": "Vasyl",
+      "last_name": "Kolisnyk"
+    }
+  },
+  {
+    "model": "theatre.actor",
+    "pk": 2,
+    "fields": {
+      "first_name": "Oksana",
+      "last_name": "Tsimbalist"
+    }
+  },
+  {
+    "model": "theatre.actor",
+    "pk": 3,
+    "fields": {
+      "first_name": "Andriy",
+      "last_name": "Kravchuk"
+    }
+  },
+  {
+    "model": "theatre.genre",
+    "pk": 1,
+    "fields": {
+      "name": "Drama"
+    }
+  },
+  {
+    "model": "theatre.genre",
+    "pk": 2,
+    "fields": {
+      "name": "Tragedy"
+    }
+  },
+  {
+    "model": "theatre.genre",
+    "pk": 3,
+    "fields": {
+      "name": "Humor"
+    }
+  },
+  {
+    "model": "theatre.genre",
+    "pk": 4,
+    "fields": {
+      "name": "Opera"
+    }
+  },
+  {
+    "model": "theatre.play",
+    "pk": 1,
+    "fields": {
+      "title": "PHILOCTETUS. ANTIQUE RAVE",
+      "description": "What distinguishes humans from monkeys? People go to barbershops, spas, sometimes to church and to the polling stations. People have a Facebook account and a desire to purposefully destroy each other simply for the sake of sport. And the most important thing is that we have the ability to invent stories, narratives, myths.\r\n\r\nFor example, this one. A poisonous snake bit the war hero's leg. The wound does not heal, it rots and stinks so that no one can be near it. The war hero is isolated on an island, where he suffers from physical pain, loneliness and a victim complex. But there comes a moment when everyone understands: the war will not end without him.\r\n\r\nThe hero must decide: to remain suffering on the island, or to return and help those who brought him here. A difficult choice.",
+      "image": "uploads/plays/philoctetus-antique-rave-a9988acc-1306-433c-95af-ac0901fb38ac.png",
+      "genres": [
+        1,
+        2
+      ],
+      "actors": [
+        1,
+        3
+      ]
+    }
+  },
+  {
+    "model": "theatre.play",
+    "pk": 2,
+    "fields": {
+      "title": "LESYA. HISTORY",
+      "description": "How do we know Lesya Ukrainka? A sickly and weak girl who laughed through her tears? The author of \"Forest Song\" and the poem \"Contra Spem Spero\"? A woman from a bill or a woman from a portrait in towels?\r\n\r\nAnd if we say that Lesya Ukrainka was rebellious and feminist? That opposed Russian colonialism, was not at all a \"friend of the proletarians\" and fought for Ukrainian identity. That Lesya Ukrainka was stylish, traveled to European capitals and visited the largest European theaters. That Lesya was a political activist, contributed to the preservation and research of cultural heritage and was friends with the bohemians of her time.\r\n\r\nThis woman created an original story - her story. That's why we created a play about Lesya Ukrainka and what you might not have known about her before � in particular, to learn more about ourselves.",
+      "image": "uploads/plays/lesya-history-80aaa572-410d-4788-83d0-1837befb8f72.png",
+      "genres": [
+        2,
+        3
+      ],
+      "actors": [
+        2,
+        3
+      ]
+    }
+  },
+  {
+    "model": "theatre.theatrehall",
+    "pk": 1,
+    "fields": {
+      "name": "Big scene",
+      "rows": 30,
+      "seats_in_row": 50
+    }
+  },
+  {
+    "model": "theatre.theatrehall",
+    "pk": 2,
+    "fields": {
+      "name": "Small scene",
+      "rows": 15,
+      "seats_in_row": 30
+    }
+  },
+  {
+    "model": "theatre.performance",
+    "pk": 1,
+    "fields": {
+      "play": 2,
+      "theatre_hall": 1,
+      "show_time": "2023-12-12T18:00:00"
+    }
+  },
+  {
+    "model": "theatre.performance",
+    "pk": 2,
+    "fields": {
+      "play": 1,
+      "theatre_hall": 2,
+      "show_time": "2023-12-12T18:00:00"
+    }
+  },
+  {
+    "model": "theatre.reservation",
+    "pk": 1,
+    "fields": {
+      "created_at": "2023-12-12T17:59:17.980",
+      "user": 1
+    }
+  },
+  {
+    "model": "theatre.reservation",
+    "pk": 2,
+    "fields": {
+      "created_at": "2023-12-12T18:01:16.045",
+      "user": 2
+    }
+  },
+  {
+    "model": "theatre.reservation",
+    "pk": 3,
+    "fields": {
+      "created_at": "2023-12-12T19:05:38.456",
+      "user": 1
+    }
+  },
+  {
+    "model": "theatre.ticket",
+    "pk": 1,
+    "fields": {
+      "row": 1,
+      "seat": 3,
+      "performance": 1,
+      "reservation": 1
+    }
+  },
+  {
+    "model": "theatre.ticket",
+    "pk": 2,
+    "fields": {
+      "row": 3,
+      "seat": 4,
+      "performance": 2,
+      "reservation": 1
+    }
+  },
+  {
+    "model": "theatre.ticket",
+    "pk": 3,
+    "fields": {
+      "row": 4,
+      "seat": 21,
+      "performance": 1,
+      "reservation": 2
+    }
+  },
+  {
+    "model": "theatre.ticket",
+    "pk": 4,
+    "fields": {
+      "row": 3,
+      "seat": 5,
+      "performance": 1,
+      "reservation": 3
+    }
+  },
+  {
+    "model": "theatre.ticket",
+    "pk": 5,
+    "fields": {
+      "row": 5,
+      "seat": 4,
+      "performance": 1,
+      "reservation": 3
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$KFL49bX7nt8OMoXcDVHSfB$MpSHM+YNn429W8hxqcG/z1ImoBpo028l8d0DuGDClBs=",
+      "last_login": "2023-12-12T17:57:15.039",
+      "is_superuser": true,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2023-12-12T17:45:21.835",
+      "email": "admin@admin.com",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$93vxhovduuh9vkdPGkYTX0$SIk36Iwxzb2gx2dV5ZltSeZuXTob17xDiZPClnl6qKs=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-12-12T18:00:56.858",
+      "email": "user@base.com",
+      "groups": [],
+      "user_permissions": []
+    }
+  }
+]
