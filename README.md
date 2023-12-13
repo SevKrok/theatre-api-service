@@ -11,7 +11,10 @@ Install PostgresSQL and create db.
 ```bash
 git clone https://github.com/SevKrok/theatre-api-service.git
 ```
-2. Open via IDE (PyCharm, VSCode, ...):
+2. Navigate to the project directory:
+```bash
+cd theatre_api_service
+```
 
 3. Switch to the develop branch:
 ```bash
