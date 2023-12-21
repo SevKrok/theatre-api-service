@@ -5,7 +5,6 @@ API for taking tickets to theatre
 
 
 ## Initialize locally
-Install PostgresSQL and create db.
 
 1. Clone the repository:
 ```bash
@@ -16,15 +15,12 @@ git clone https://github.com/SevKrok/theatre-api-service.git
 cd theatre_api_service
 ```
 
-3. Switch to the develop branch:
-```bash
-git checkout develop
-```
-4. Create a virtual environment:
+
+3. Create a virtual environment:
 ```bash
 python -m venv venv
 ```
-5. Activate the virtual environment:
+4. Activate the virtual environment:
 
 On macOS and Linux:
 ```bash
@@ -34,23 +30,20 @@ On Windows:
 ```bash
 venv\Scripts\activate
 ```
-6. Install project dependencies:
+5. Install project dependencies:
 ```bash
 pip install -r requirements.txt
 ```
-7. Copy .env.sample to .env (you must make it) and fill it with all required data.
-8. Run database migrations:
+6. Copy .env.sample to .env (you must make it) and fill it with all required data.
+7. Run database migrations:
 ```bash
 python manage.py migrate
 ```
-9. Optional: If you want to refill your database with some data, use:
+8. Optional: If you want to refill your database with some data, use:
 ```bash
-python manage.py loaddata airport_db_data.json
+python manage.py loaddata theatre_service_db_data.json
 ```
-10. Start the development server:
-```bash
-python manage.py runserver
-```
+
 
 ## Run with Docker
 Docker should be installed.
@@ -66,10 +59,11 @@ docker-compose up
 ```
 
 ## Getting access
-+ Create user: `/api/user/register/`
-+ Get access token: `/api/user/token/`
-+ Look for documentation: `/api/doc/swagger/`
-+ Admin panel: `/admin/`
++ [Create user](http://127.0.0.1:8000/api/user/register/)
++ [Get access token](http://127.0.0.1:8000/api/user/token/)
++ [Theatre API](http://127.0.0.1:8000/api/theatre/)
++ [Look for documentation](http://127.0.0.1:8000/api/doc/swagger/)
++ [Admin panel](http://127.0.0.1:8000/api/admin/)
 
 ## Features
 + JWT Authentication
