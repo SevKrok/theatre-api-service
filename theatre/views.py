@@ -23,6 +23,7 @@ from theatre.serializers import (
     PerformanceDetailSerializer,
     PerformanceListSerializer,
 )
+from theatre.helpers import params_to_ints
 
 
 class ActorViewSet(
@@ -33,7 +34,6 @@ class ActorViewSet(
     viewsets.GenericViewSet,
 ):
     queryset = Actor.objects.all()
-    serializer_class = ActorSerializer
     permission_classes = (IsAdminOrReadOnly,)
 
     def get_serializer_class(self):
@@ -50,7 +50,6 @@ class GenreViewSet(
     viewsets.GenericViewSet,
 ):
     queryset = Genre.objects.all()
-    serializer_class = GenreSerializer
     permission_classes = (IsAdminOrReadOnly,)
 
     def get_serializer_class(self):
@@ -67,12 +66,7 @@ class PlayViewSet(
     viewsets.GenericViewSet,
 ):
     queryset = Play.objects.prefetch_related("genres", "actors", "performances")
-    serializer_class = PlaySerializer
     permission_classes = (IsAdminOrReadOnly,)
-
-    @staticmethod
-    def _params_to_ints(queryset):
-        return [int(str_id) for str_id in queryset.split(",")]
 
     def get_queryset(self):
         queryset = self.queryset
@@ -81,10 +75,10 @@ class PlayViewSet(
         actors = self.request.query_params.get("actors")
 
         if genres:
-            genre_ids = self._params_to_ints(genres)
+            genre_ids = params_to_ints(genres)
             queryset = queryset.filter(genres__id__in=genre_ids)
         if actors:
-            actors_ids = self._params_to_ints(actors)
+            actors_ids = params_to_ints(actors)
             queryset = queryset.filter(actors__id__in=actors_ids)
 
         return queryset.distinct()
@@ -156,7 +150,6 @@ class PerformanceViewSet(
         "play__actors",
         "play__genres",
     )
-    serializer_class = PerformanceSerializer
     permission_classes = (IsAdminOrReadOnly,)
 
     def get_queryset(self):
